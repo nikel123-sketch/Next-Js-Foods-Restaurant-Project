@@ -1,3 +1,4 @@
+import FoodCard from '@/Component/Card/FoodCard';
 import React from 'react';
 
 const foodsdata = [
@@ -506,9 +507,10 @@ const FoodsPages =async () => {
         
       
     return (
-      <div>
-        <h1>totall foods {foodsdata.length}</h1>
-        
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {foodsdata.map((food) => (
+          <FoodCard key={food.id} food={food} />
+        ))}
       </div>
     );
 };
