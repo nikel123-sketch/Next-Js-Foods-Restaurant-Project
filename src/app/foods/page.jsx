@@ -1,6 +1,7 @@
 import FoodCard from '@/Component/Card/FoodCard';
 import React from 'react';
 
+
 const foodsdata = [
   {
     id: 1,
@@ -503,14 +504,21 @@ const foodsdata = [
     description: "Traditional Thai pad thai noodles.",
   },
 ];
+
 const FoodsPages =async () => {
+  await new Promise((resolve)=>setTimeout(resolve,1000))
         
       
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {foodsdata.map((food) => (
-          <FoodCard key={food.id} food={food} />
-        ))}
+      <div>
+          <h1 className="mb-4 text-center font-bold  text-2xl underline">
+            totall foods {foodsdata.length}
+          </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {foodsdata.map((food) => (
+            <FoodCard key={food.id} food={food} />
+          ))}
+        </div>
       </div>
     );
 };
