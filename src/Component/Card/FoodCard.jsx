@@ -3,45 +3,48 @@ import Link from "next/link";
 import React from "react";
 
 const FoodCard = ({ food }) => {
-    
+ 
   return (
-    <div className="border rounded-xl shadow-md p-3 sm:p-4 hover:shadow-xl transition bg-white">
+    <div className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       {/* Image */}
-      <div className="relative w-full h-40 sm:h-44 md:h-48">
+      <div className="relative w-full h-44 sm:h-48 md:h-52 overflow-hidden">
         <Image
           src={food.image}
           alt={food.name}
           fill
-          className="object-cover rounded-lg"
+          className="object-cover group-hover:scale-110 transition-transform duration-300"
         />
       </div>
 
       {/* Info */}
-      <div className="mt-3 space-y-1 sm:space-y-2">
-        <h2 className="text-lg sm:text-xl font-semibold">{food.name}</h2>
+      <div className="p-4 space-y-2">
+        <h2 className="text-lg font-semibold text-gray-800 line-clamp-1">
+          {food.name}
+        </h2>
 
-        <p className="text-xs sm:text-sm text-gray-500">{food.category}</p>
+        <p className="text-sm text-gray-500">{food.category}</p>
 
-        <div className="flex justify-between items-center">
-          <span className="text-base sm:text-lg font-bold text-orange-500">
+        <div className="flex justify-between items-center pt-1">
+          <span className="text-lg font-bold text-orange-500">
             ${food.price}
           </span>
 
-          <span className="text-sm sm:text-base text-yellow-500">
+          <span className="flex items-center gap-1 text-sm font-medium text-yellow-500">
             ⭐ {food.rating}
           </span>
         </div>
       </div>
 
       {/* Buttons */}
-      <div className="flex gap-2 mt-3">
-        <button className="flex-1 bg-orange-500 text-white py-1.5 sm:py-2 text-sm sm:text-base rounded-lg hover:bg-orange-600 transition">
+      <div className="flex gap-2 p-4 pt-0">
+        <button className="flex-1 bg-orange-500 text-white py-2 text-sm font-medium rounded-lg hover:bg-orange-600 transition">
           Add to Cart
         </button>
 
         <Link
-          href={`/foods/${food.slug}`}
-          className="flex-1 text-center border border-orange-500 text-orange-500 py-1.5 sm:py-2 text-sm sm:text-base rounded-lg hover:bg-orange-500 hover:text-white transition"
+
+          href={`/foods/${food.id}`}
+          className="flex-1 text-center border border-orange-500 text-orange-500 py-2 text-sm font-medium rounded-lg hover:bg-orange-500 hover:text-white transition"
         >
           Details
         </Link>
