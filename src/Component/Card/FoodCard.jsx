@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import AddToCard from "../Btn/AddToCard";
+import BtnAddToCard from "../btn/BtnAddToCard";
+
 
 const FoodCard = ({ food }) => {
  
@@ -38,7 +39,7 @@ const FoodCard = ({ food }) => {
 
       {/* Buttons */}
       <div className="flex gap-2 p-4 pt-0">
-        <AddToCard></AddToCard>
+        <BtnAddToCard food={food}></BtnAddToCard>
 
         <Link
 

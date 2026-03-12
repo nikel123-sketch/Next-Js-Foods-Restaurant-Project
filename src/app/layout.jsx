@@ -1,5 +1,7 @@
 import Navber from "@/Component/Navber/Navber";
 import "./globals.css";
+import CartProvider from "@/contex/CartProvider";
+
 
 export const metadata = {
   title: "foods project",
@@ -12,7 +14,12 @@ export default function RootLayout({ children }) {
       <body>
         <Navber></Navber>
         <main className="p-5">
+        
+      <CartProvider>
+
         {children}
+      </CartProvider>
+          
         </main>
         </body>
     </html>
