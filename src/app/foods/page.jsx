@@ -511,9 +511,16 @@ const FoodsPages =async () => {
       
     return (
       <div>
-          <h1 className="mb-4 text-center font-bold  text-2xl underline">
-            totall foods {foodsdata.length}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+          <h1 className="mb-4 font-bold text-lg sm:text-xl md:text-2xl underline">
+            Total Foods {foodsdata.length}
           </h1>
+
+          <h1 className="mb-4 font-bold text-lg sm:text-xl md:text-2xl underline">
+            Total Add To Cart (1)
+          </h1>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {foodsdata.map((food) => (
             <FoodCard key={food.id} food={food} />
