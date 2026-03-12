@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import AddToCard from "../Btn/AddToCard";
 
 const FoodCard = ({ food }) => {
  
@@ -37,9 +38,7 @@ const FoodCard = ({ food }) => {
 
       {/* Buttons */}
       <div className="flex gap-2 p-4 pt-0">
-        <button className="flex-1 bg-orange-500 text-white py-2 text-sm font-medium rounded-lg hover:bg-orange-600 transition">
-          Add to Cart
-        </button>
+        <AddToCard></AddToCard>
 
         <Link
 
