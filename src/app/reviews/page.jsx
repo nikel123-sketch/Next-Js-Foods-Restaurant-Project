@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 
 
 const ReviewsPages   = () => {
+    
     const [reviews,setreviews]=useState([]);
-    // console.log(reviews)
+    console.log(reviews)
     useEffect(()=>{
         fetch("https://taxi-kitchen-api.vercel.app/api/v1/reviews")
           .then((res) => res.json())

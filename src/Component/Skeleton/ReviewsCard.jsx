@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import { resolve } from "styled-jsx/css";
 
 const ReviewsCard = ({ rev }) => {
+    
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
 
@@ -28,8 +30,8 @@ const ReviewsCard = ({ rev }) => {
           <p className="text-sm text-amber-200">{rev.email}</p>
         </div>
 
+          <p className="text-fuchsia-500">{rev.review}</p>
         <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-          <p className="text-fuchsia-500">{rev.comment}</p>
 
           {/* Like Button */}
           <button
@@ -39,11 +41,11 @@ const ReviewsCard = ({ rev }) => {
           >
             ❤️ Like {likeCount > 0 && <span>({likeCount})</span>}
           </button>
-        </div>
-
         <div className="mt-1 text-yellow-500 font-medium flex items-center gap-1">
           ⭐ {rev.rating}
         </div>
+        </div>
+
       </div>
     </div>
   );
