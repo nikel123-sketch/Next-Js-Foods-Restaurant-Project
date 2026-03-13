@@ -15,7 +15,7 @@ const FoodCard = ({ food }) => {
         <img
           src={foodImg || "/images/fallback.jpg"}
           alt={food.name || "Food item"}
-          fill
+          
           className="object-cover group-hover:scale-110 transition-transform duration-300"
         />
       </div>

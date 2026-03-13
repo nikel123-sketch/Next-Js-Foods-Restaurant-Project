@@ -1,30 +1,33 @@
 "use client";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 
 const InputSearch = () => {
-  const hendleInputSearch = (e) => {
-    e.preventDefault();
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
 
-    const Value = e.target.Search.value;
-    console.log(Value);
-    e.target.reset();
+  const handleInputSearch = (e) => {
+    e.preventDefault();
+    if (!searchTerm.trim()) return;
+
+    router.push(`/foods?search=${encodeURIComponent(searchTerm.trim())}`);
+    setSearchTerm("");
   };
 
   return (
-    <div>
-      <form onSubmit={hendleInputSearch}>
-        <input
-          name="Search"
-          className="border-2 p-1 mx-4"
-          type="text"
-          placeholder="Enter Food Name"
-        />
-
-        <button className="bg-indigo-500 font-bold p-2 rounded-2xl">
-          Search
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleInputSearch} className="flex items-center gap-2">
+      <input
+        type="text"
+        name="search"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Enter Food Name"
+        className="border-2 p-1 rounded"
+      />
+      <button className="bg-indigo-500 text-white font-bold p-2 rounded-2xl">
+        Search
+      </button>
+    </form>
   );
 };
 
