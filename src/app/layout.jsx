@@ -4,7 +4,7 @@ import CartProvider from "@/contex/CartProvider";
 
 
 export const metadata = {
-  title: "foods project",
+  title: "Foods Resturent",
   description: "This is my Next.js foods website",
 };
 

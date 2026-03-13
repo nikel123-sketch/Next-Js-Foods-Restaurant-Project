@@ -16,6 +16,12 @@ const getfoods = async ({ search }) => {
   return data.foods;
 };
 
+
+
+export const metadata = {
+  title: " All Foods-Foods Resturent",
+  description: "This is my Next.js foods website",
+};
 const FoodsPages =async ({searchParams}) => {
   await new Promise((resolve)=>setTimeout(resolve,500))
 
@@ -23,7 +29,8 @@ const FoodsPages =async ({searchParams}) => {
   // console.log(search)
 const foodsdata = await getfoods({search});
 // console.log(foodsdata)
-        
+     
+
       
     return (
       <div>
