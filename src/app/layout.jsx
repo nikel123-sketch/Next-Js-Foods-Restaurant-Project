@@ -12,15 +12,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <CartProvider>
         <Navber></Navber>
         <main className="p-5">
         
-      <CartProvider>
+      
 
         {children}
-      </CartProvider>
           
         </main>
+      </CartProvider>
         </body>
     </html>
   );
