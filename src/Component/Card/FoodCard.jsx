@@ -6,7 +6,7 @@ import BtnAddToCard from "../btn/BtnAddToCard";
 
 const FoodCard = ({ food }) => {
   
-  const { category, foodImg ,price,title} = food;
+  const { category, foodImg, price, title, id } = food;
  
   return (
     <div className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
@@ -44,7 +44,7 @@ const FoodCard = ({ food }) => {
         <BtnAddToCard food={food}></BtnAddToCard>
 
         <Link
-          href={`/foods/${food.id}`}
+          href={`/foods/${id}`}
           className="flex-1 text-center border border-orange-500 text-orange-500 py-2 text-sm font-medium rounded-lg hover:bg-orange-500 hover:text-white transition"
         >
           Details
