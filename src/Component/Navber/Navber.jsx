@@ -1,29 +1,44 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import NavLink from "../NavLink";
+import { useState } from "react";
+import InputSearch from "../InputSearch";
+import CartItems from "@/app/foods/[id]/CartItems";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="flex justify-between items-center px-8 py-4 bg-gray-700 text-white">
-      <Link href={'/'}>
+    <nav className="relative flex justify-between items-center  px-8 py-4 bg-gray-900 text-white">
+      {/* Logo */}
+      <Link href="/">
         <Image
           src="/favicon.ico"
-          alt="Logo"
-          width={50}
-          height={50}
+          alt="logo"
+          width={40}
+          height={40}
           className="rounded-full bg-amber-300"
         />
       </Link>
 
-      <div className="space-x-3">
-        <Link href="/" className="hover:text-amber-400 transition">
-          Home
-        </Link>
-        <Link href="foods" className="hover:text-amber-400 transition">
-          foods
-        </Link>
-        <Link href="reviews" className="hover:text-amber-400 transition">
-          reviews
-        </Link>
+      <InputSearch></InputSearch>
+      <CartItems></CartItems>
+      {/* Mobile Button */}
+      <button onClick={() => setOpen(!open)} className="md:hidden text-2xl">
+        {open ? "✕" : "☰"}
+      </button>
+
+      {/* Menu */}
+      <div
+        className={`${
+          open ? "flex" : "hidden"
+        } flex-col md:flex md:flex-row gap-4 absolute md:static  left-0 top-16 w-full md:w-auto p-4 md:p-0`}
+      >
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/foods">Foods</NavLink>
+        <NavLink href="/reviews">Reviews</NavLink>
       </div>
     </nav>
   );

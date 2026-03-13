@@ -20,9 +20,9 @@ const FoodsPages =async ({searchParams}) => {
   await new Promise((resolve)=>setTimeout(resolve,500))
 
   const {search=''}=await searchParams;
-  console.log(search)
+  // console.log(search)
 const foodsdata = await getfoods({search});
-console.log(foodsdata)
+// console.log(foodsdata)
         
       
     return (
@@ -32,10 +32,10 @@ console.log(foodsdata)
             Total Foods {foodsdata.length}
           </h1>
 
-         <InputSearch></InputSearch>
+        
         </div>
 
-        <div className="flex gap-2">
+       
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {foodsdata.map((food) => (
               
@@ -43,14 +43,8 @@ console.log(foodsdata)
             ))}
           </div>
 
-          <div className=" w-[200px] border-2 p-4">
-            <h1 className="mb-4 font-bold text-lg sm:text-xl md:text-2xl underline ">
-              Add To Cart
-            </h1>
-
-            <CartItems></CartItems>
-          </div>
-        </div>
+          
+        
       </div>
     );
 };

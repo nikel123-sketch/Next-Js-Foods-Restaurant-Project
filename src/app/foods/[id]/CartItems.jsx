@@ -1,17 +1,23 @@
 "use client";
 
+
 import { cartContex } from "@/contex/CartProvider";
-import React, { use} from "react";
+import Link from "next/link";
+import React, { useContext } from "react";
 
 const CartItems = () => {
-  const {cart}=use(cartContex)
-console.log(cart)
+  const { cart } = useContext(cartContex);
+  
+
   return (
     <div>
-      <h1>
-        Total Add To Cart {cart.length}
+      <h1 className="font-bold underline text-fuchsia-50 text-xl ">
+        Cart(
+        <span className="text-blue-200 text-xl">{cart.length}</span>)
       </h1>
-       
+    
+
+      
     </div>
   );
 };

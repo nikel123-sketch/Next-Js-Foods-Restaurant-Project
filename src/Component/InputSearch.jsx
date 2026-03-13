@@ -8,7 +8,7 @@ const InputSearch = () => {
 
   const handleInputSearch = (e) => {
     e.preventDefault();
-    if (!searchTerm.trim()) return;
+    // if (!searchTerm.trim()) return;
 
     router.push(`/foods?search=${encodeURIComponent(searchTerm.trim())}`);
     setSearchTerm("");
