@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+
 const getdata = async () => {
   const res = await fetch(
     `https://taxi-kitchen-api.vercel.app/api/v1/foods/random`,
@@ -9,13 +10,19 @@ const getdata = async () => {
   return data.foods;
 };
 
+
+
+
+
 const FoodDetails = async ({ params }) => {
   await new Promise((resolve) => setTimeout(resolve, 500));
   const { id } = await params;
-  console.log(id)
+  // console.log(id)
   const foodsdata = await getdata();
 
   const food = foodsdata.find((item) => item.id === parseInt(id));
+
+
   console.log(food)
 
   if (!food) {

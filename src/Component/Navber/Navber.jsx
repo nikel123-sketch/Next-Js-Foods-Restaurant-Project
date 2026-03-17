@@ -14,13 +14,7 @@ const Navbar = () => {
     <nav className="relative flex justify-between items-center  px-8 py-4 bg-gray-900 text-white">
       {/* Logo */}
       <Link href="/">
-        <Image
-          src="/favicon.ico"
-          alt="logo"
-          width={40}
-          height={40}
-          className="rounded-full bg-amber-300"
-        />
+        <Image src="/foodlogo.png" alt="logo" width={50} height={50} className="rounded-full" />
       </Link>
 
       <InputSearch></InputSearch>
