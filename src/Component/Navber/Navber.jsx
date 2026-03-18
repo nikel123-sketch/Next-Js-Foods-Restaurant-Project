@@ -14,7 +14,13 @@ const Navbar = () => {
     <nav className="relative flex justify-between items-center  px-8 py-4 bg-gray-900 text-white">
       {/* Logo */}
       <Link href="/">
-        <Image src="/foodlogo.png" alt="logo" width={50} height={50} className="rounded-full" />
+        <Image
+          src="/foodlogo.png"
+          alt="logo"
+          width={50}
+          height={50}
+          className="rounded-full"
+        />
       </Link>
 
       <InputSearch></InputSearch>
@@ -31,7 +37,9 @@ const Navbar = () => {
         } flex-col md:flex md:flex-row gap-4 absolute md:static  left-0 top-16 w-full md:w-auto p-4 md:p-0`}
       >
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/foods">Foods</NavLink>
+        <NavLink prefetch={false} href="/foods">
+          Foods
+        </NavLink>
         <NavLink href="/reviews">Reviews</NavLink>
       </div>
     </nav>

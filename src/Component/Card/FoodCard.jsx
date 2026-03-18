@@ -12,11 +12,13 @@ const FoodCard = ({ food }) => {
     <div className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       {/* Image */}
       <div className="relative w-full h-44 sm:h-48 md:h-52 overflow-hidden">
-        <img
+        <Image
           src={foodImg || "/images/fallback.jpg"}
           alt={food.name || "Food item"}
           
-          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          className="w-full object-cover group-hover:scale-110 transition-transform duration-300"
+          width={300}
+          height={180}
         />
       </div>
 
